@@ -1,15 +1,14 @@
-def factorial(n):
-    if n == 0:
-        return 1
-    else:
-        return n * factorial(n-1)
-
-# Input a number from the user
-num = int(input("Enter a number: "))
-
-# Check if the number is negative
-if num < 0:
-    print("Factorial is not defined for negative numbers.")
-else:
-    result = factorial(num)
-    print("The factorial of", num, "is", result)
+class Player:
+  def play(self):
+    print("The player is playing cricket.")
+class Batsman(Player):
+  def play(self):
+    print("The batsman is batting.")
+class Bowler(Player):
+  def play(self):
+    print("The bowler is bowling.")
+batsman = Batsman()
+bowler = Bowler()
+ 
+batsman.play()
+bowler.play()
