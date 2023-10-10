@@ -1,47 +1,31 @@
-#3.2 Implement a function called sort_students that takes a list of student objects as input and sorts the list based on their CGPA (Cumulative Grade Point Average) in descending order. Each student object has the following attributes: name (string), roll_number (string), and cgpa (float). Test the function with different input lists of students.
+#3.1 Write a function called linear_search_product that takes the list of products and a target product name as input. The function should perform a linear search to find the target product in the list and return a list of indices of all occurrences of the product if found, or an empty list if the product is not found.
 
-class Student:
+def linear_search_product(product_list, target_product):
 
-    def __init__(self, name, roll_number, cgpa):
+    indices = []
 
-        self.name = name
+    for i, product in enumerate(product_list):
 
-        self.roll_number = roll_number
+        if product == target_product:
 
-        self.cgpa = cgpa
+            indices.append(i)
 
-
-
-def sort_students(student_list):
-
-    sorted_students = sorted(student_list, key=lambda student: student.cgpa, reverse=True)
-
-    return sorted_students
+    return indices
 
 
 
 # Example usage:
 
-student1 = Student("Hari", "A123", 7.8)
+products = ["shoes", "boot", "loafer", "shoes", "sandal","shoes"]
 
-student2 = Student("srikanth", "A124", 8.9)
+target = "shoes"
 
-student3 = Student("saumya", "A125", 9.1)
+result = linear_search_product(products, target)
 
-student4 = Student("Mahidhar", "A126", 9.9)
+if result:
 
+    print(f"The product '{target}' was found at indices: {result}")
 
+else:
 
-students = [student1, student2, student3, student4]
-
-
-
-sorted_students = sort_students(students)
-
-
-
-# Print the sorted list of students by CGPA in descending order
-
-for student in sorted_students:
-
-    print(f"Name: {student.name}, Roll Number: {student.roll_number}, CGPA: {student.cgpa}")
+    print(f"The product '{target}' was not found in the list.")
